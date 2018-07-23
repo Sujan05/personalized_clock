@@ -42,20 +42,12 @@ entity led is
 end led;
 
 architecture Behavioral of led is
-    --signal count: STD_LOGIC_VECTOR(3 downto 0) := "0000";
     signal value: integer := 0;
     signal counter: STD_LOGIC := '0';
-    --signal clk: STD_LOGIC;
 begin
     process(clk)
     begin
     if clk'event and clk = '1' then
---     value <= value + 1;
---     if value = 1000000000 then
---        counter <= '1';
---        value <= 0;
---     else 
---        counter <= '0';
         if counter = '0' then
             value <= value + 1;
             if value = 50000000 then
