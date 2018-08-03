@@ -43,19 +43,20 @@ end led;
 
 architecture Behavioral of led is
     signal value: integer := 0;
-    signal counter: STD_LOGIC := '0';
+    signal counter: STD_LOGIC := '0';    
 begin
+ 
     process(clk)
     begin
     if clk'event and clk = '1' then
         if counter = '0' then
             value <= value + 1;
-            if value = 50000000 then
+            if value = 49999999 then
                 counter <= '1';
             end if;
         else 
             value <= value - 1;
-            if value = 0 then
+            if value = 1 then
                 counter <= '0';
             end if;
         end if;
